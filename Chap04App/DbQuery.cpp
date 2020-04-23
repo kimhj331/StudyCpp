@@ -16,10 +16,13 @@ public:
 
 };
 
+
+//static 멤버를 사용하기위해 선언
 int DBQuery::hCon;
 
 void DBQuery::DBConnect(const char* Server, const char* ID, const char* pass) {
 //여기서 DB서버에 접속
+	/*MYSQL* hcon = mysql_init(NULL);*/
 	hCon = 1234; //임의값
 	puts("연결성공");
 }
@@ -27,7 +30,7 @@ void DBQuery::DBConnect(const char* Server, const char* ID, const char* pass) {
 void DBQuery::DBDisConnect() {
 	//접속해제
 	hCon = NULL; //임의값
-	puts("연결gowp");
+	puts("연결해제");
 }
 
 bool DBQuery::RunQuery(const char* SQL) {
@@ -37,6 +40,7 @@ bool DBQuery::RunQuery(const char* SQL) {
 }
 
 int main() {
+	//static 함수의 사용
 	DBQuery::DBConnect("192.168.0.155", "root", "mysql_p@ssw0rd");
 	/*DBQuery::DBConnect(MYSQLIP, MYSQLUSER, MYSQLPASSWORD);*/
 
