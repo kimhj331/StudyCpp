@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{C1478A15-D012-4A9E-8D39-33F3D03F57C5}</ProjectGuid>
-    <RootNamespace>Chap03App</RootNamespace>
+    <ProjectGuid>{45ABEEEF-8B16-4C84-965D-E4F21B78EDA7}</ProjectGuid>
+    <RootNamespace>Chap04App</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -137,6 +137,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cursor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DbQuery.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
