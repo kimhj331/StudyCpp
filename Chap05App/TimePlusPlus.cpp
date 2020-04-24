@@ -37,9 +37,6 @@ int main() {
 	t2 = t1++;
 	t1.OutTime();
 	t2.OutTime();
-
-	int i, j;
-	i = 1;
-	j = i++;
 	
+	return 0;
 }
