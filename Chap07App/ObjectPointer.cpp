@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
+
+using namespace std;
 
 class Human
 {
@@ -37,27 +40,43 @@ public:
 
 int main()
 {
-	Human h("김사람", 10);
-	Student s("이학생", 15, 1234567);
+	Human h("성명건", 45);
+	Student s("김희지", 25, 201512979);
 	Human* pH;
 	Student* pS;
 
-	pH = &h;		// name, age <= name(김사람), age(10)
-	pH->intro();
-	pH = &s;
-	pH->intro(); //기반이 되는 함수에 virtual을 붙이면 포인터가 가르키는 타입에 따라 호출할 함수를 결정한다.
-	/*학생은 학생 intro, 사람은 사람 intro*/
+	int sel = 0;
 
-	//pS = &Lee;		// 당연히 가능
-	//pS->Human::intro();
+	//pH = &h;		// name, age <= name(김사람), age(10)
+	//pH->intro();
+	//pH = &s;
+	//pH->intro(); //기반이 되는 함수에 virtual을 붙이면 포인터가 가르키는 타입에 따라 호출할 함수를 결정한다.
+	///*학생은 학생 intro, 사람은 사람 intro*/
+
+	//pS = (Student*)&h;
 	//pS->intro();
+	while (1)
+	{
+		cout << "원하는 수를 고르세요(1.Human, 2.Student, 9:종료)";
+		cin >> sel;
+		if (sel == 1) {
+			pH = &h;
+			pH->intro();
+		}
+		else if (sel == 2) {
+			pH = &s;
+			pH->intro();
+		}
 
-	//pH = &Lee;		// 가능
-	////pS = &h;		// name(김사람), age(10), stunum(????) <= name(김사람), age(10) 타입변환 후에 사용가능
+		else if (sel == 9) {
+			cout << "***종료합니다***" << endl;
+			break;
+		}
+		else {
+			cout << "맞는 수가 없습니다." << endl;
+		}
+	}
 
-
-	//pS = (Student*)&kim;
-	//pS->intro();
 
 	return 0;
 }
